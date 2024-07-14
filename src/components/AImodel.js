@@ -1,5 +1,5 @@
 import React from 'react';
-import './AImodel.css';
+// import './AImodel.css';
 
 function AIModelIntegration() {
     return (

@@ -1,0 +1,226 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #c0d1e4, #69b7cd);
+    overflow-x: hidden;
+}
+
+.cure-methods {
+    font-family: 'Arial', sans-serif;
+    padding: 40px;
+    background: linear-gradient(to right, #c0d1e4, #69b7cd);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    margin: 60px auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.cure-methods h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: slideInDown 1s ease-in-out;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.cure-methods h3 {
+    color: #555;
+    margin-top: 30px;
+    animation: slideInLeft 1s ease-in-out;
+    font-size: 28px;
+}
+
+.cure-methods ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 90px;
+    /* Adding space between cards */
+}
+
+.cure-methods li {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    /* Adjusting margin for better spacing */
+    flex: 0 0 300px;
+    perspective: 1000px;
+    transition: transform 0.5s, box-shadow 0.5s, background 0.5s;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out, wave 5s ease-in-out infinite;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    color: #333;
+    /* Ensure text color is dark by default */
+}
+
+.cure-methods li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(236, 199, 236, 0.8), rgba(225, 224, 224, 0) 70%);
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: transform 0.5s, opacity 0.5s;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cure-methods li:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.cure-methods li:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+    box-shadow: 0 12px 24px rgba(238, 236, 236, 0.3), 0 0 30px rgba(171, 164, 164, 0.8);
+    background: linear-gradient(to right, #cdcfd2, #eef1f3);
+    color: #000;
+    /* Ensure text color is black on hover */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    /* Add subtle text shadow */
+}
+
+.cure-methods li:hover .treatment-info {
+    color: #333;
+    /* Ensure treatment info text is dark on hover */
+    transition: color 0.5s;
+}
+
+.cure-methods li:active {
+    transform: translateX(10px) translateX(-10px);
+    /* Slide effect in both directions */
+}
+
+.cure-methods .treatment-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 8px 16px rgba(164, 128, 128, 0.2);
+    animation: zoomIn 1s ease-in-out;
+}
+
+.cure-methods .treatment-info {
+    animation: fadeInLeft 1s ease-in-out;
+    font-size: 16px;
+    transition: color 0.5s;
+    color: #333;
+    /* Ensure treatment info text is dark by default */
+}
+
+.cure-methods li p {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #777;
+}
+
+.cure-methods li a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cure-methods li a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+}
